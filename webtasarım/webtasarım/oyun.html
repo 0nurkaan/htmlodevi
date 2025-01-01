@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oyun - ARABA YAKALAMA</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        #araba {
+            position: absolute;
+            width: 100px;
+            left: 50%;  
+            top: 50%;   
+            transform: translate(-50%, -50%); 
+            transition: left 0.2s, top 0.2s; 
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="modeller.html">Modeller</a></li>
+                <li><a href="galeri.html">Galeri</a></li>
+                <li><a href="oyun.html">Oyun</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>ARABAYI YAKALA!</h1>
+        <img id="araba" src="img/lambo_revuelto.jpg" alt="Araba">
+    </main>
+
+    <script>
+        const araba = document.getElementById("araba");
+
+        araba.addEventListener("mouseover", function() {
+            const width = window.innerWidth;
+            const height = window.innerHeight;
+
+            const randomX = Math.random() * (width - araba.width);
+            const randomY = Math.random() * (height - araba.height);
+
+            araba.style.left = randomX + "px";
+            araba.style.top = randomY + "px";
+        });
+    </script>
+</body>
+</html>
+
+
